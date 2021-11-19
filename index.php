@@ -10,9 +10,11 @@
 require "controller/navigation.php";
 require "controller/users.php";
 
-if (isset($_GET['action'])) {
+if (isset($_GET['action']))
+{
     $action = $_GET['action'];
-    switch ($action) {
+    switch ($action)
+    {
         case 'home' :
             home();
             break;
@@ -24,6 +26,8 @@ if (isset($_GET['action'])) {
         default :
             lost();
     }
-} else {
+}
+else
+{
     home();
 }
