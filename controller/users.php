@@ -10,7 +10,26 @@
 /**
  * @brief
  */
+
+require "model/userMgt.php";
+
 function login()
 {
-    require "view/login.php";
+    //If we come from login.phpfrom
+    if(isset($_POST['email']))
+    {
+        if(checkLogin())
+        {
+            require "view/home.php";
+        }
+        else
+        {
+            echo "fail";
+        }
+    }
+    //if we come from the menu button
+    else
+    {
+        require "view/login.php";
+    }
 }
