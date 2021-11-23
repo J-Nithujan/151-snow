@@ -7,6 +7,8 @@
  * @version   26-MAR-2021
  */
 
+session_start();
+
 require "controller/navigation.php";
 require "controller/users.php";
 
@@ -21,6 +23,10 @@ if (isset($_GET['action']))
 
         case 'login' :
             login();
+            break;
+
+        case 'logout' :
+            logout();
             break;
 
         default :

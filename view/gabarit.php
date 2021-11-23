@@ -61,9 +61,21 @@
             </div>
 
             <span class="topbar-child1">
-					Livraison gratuite dès 200.-
-				</span>
+                Livraison gratuite dès 200.-
+            </span>
 
+            <?php
+            if (isset($_SESSION['email']))
+            {
+            ?>
+            <div class="topbar-child2">
+                <span class="topbar-email">
+                    <? echo $_SESSION['email']; ?>
+                </span>
+            </div>
+            <?php
+            }
+            ?>
 
         </div>
 
@@ -82,7 +94,20 @@
                         </li>
 
                         <li>
-                            <a href="index.php?action=login">Login</a>
+                            <?php
+                            if(isset($_SESSION['email']))
+                            {
+                                ?>
+                                <a href="index.php?action=logout">Logout</a>
+                            <?php
+                            }
+                            else
+                            {
+                            ?>
+                                <a href="index.php?action=login">Login</a>
+                            <?php
+                                }
+                            ?>
                         </li>
 
                     </ul>
@@ -121,6 +146,18 @@
 						</span>
                 </li>
 
+                <?php
+                if (isset($_SESSION['email']))
+                {
+                ?>
+                <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+					<span class="topbar-child1">
+                            <?php echo $_SESSION['email']; ?>
+					</span>
+                </li>
+                <?php
+                }
+                ?>
 
                 <li class="item-topbar-mobile p-l-10">
                     <div class="topbar-social-mobile">
@@ -137,7 +174,18 @@
                 </li>
 
                 <li class="item-menu-mobile">
-                    <a href="index.php?action=login">Login</a>
+                    <?php if(isset($_SESSION['email']))
+                        { ?>
+                            <a href="index.php?action=">Logout</a>
+                    <?php
+                        }
+                        else
+                        { ?>
+                            <a href="index.php?action=login">Login</a>
+                        <?php
+                        }
+                        ?>
+
                 </li>
 
             </ul>

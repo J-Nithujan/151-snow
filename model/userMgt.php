@@ -18,7 +18,9 @@ function checkLogin()
     $email = $_POST['email'];
     $pwd = $_POST['userPswd'];
 
-    if($users = file_get_contents("users.json") != null)
+//    if($users = file_get_contents("../users.json") != null)
+    $users = file_get_contents("model/users.json");
+    if($users != null)
     {
         $usersDecoded = json_decode($users, true);
 
@@ -26,7 +28,7 @@ function checkLogin()
         {
             foreach ($tabUsersInter as $entry => $tabLogin)
             {
-                if (in_array($_POST['email'], $tabLogin) && in_array($_POST['userPswd'], $tabLogin))
+                if (in_array($email, $tabLogin) && in_array($pwd, $tabLogin))
                 {
                     return true;
                 }

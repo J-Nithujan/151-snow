@@ -11,13 +11,26 @@ ob_start();
 $title = "SnowPoint . Login";
 ?>
 
+<!-- Title Page -->
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/heading-pages-06.jpg); ">
+    <h2 class="l-text2 t-center">
+        Login
+    </h2>
+</section>
+
 <!-- content page -->
 <section class="bgwhite p-t-66 p-b-60">
     <div class="container">
         <div class="row">
 
             <div class="col-md-12 p-b-30">
-                <form class="leave-comment" method="post" action="../index.php?login">
+                <h2 style="background-color: red; "><?php if(isset($errorMsg))
+                    {
+                        echo $errorMsg;
+                    }?>
+                </h2>
+<!--                <form class="leave-comment" method="post" action="../index.php?login">-->
+                <form class="leave-comment" method="post" action="index.php?action=login">
                     <h4 class="m-text26 p-b-36 p-t-15">
                         Connectez-vous
                     </h4>

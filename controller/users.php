@@ -15,21 +15,28 @@ require "model/userMgt.php";
 
 function login()
 {
-    //If we come from login.phpfrom
     if(isset($_POST['email']))
     {
         if(checkLogin())
         {
+            $_SESSION['email'] = $_POST['email'];
             require "view/home.php";
         }
         else
         {
-            echo "fail";
+            $errorMsg = "Erreur: identifiants incorrects";
+            require "view/login.php";
         }
     }
-    //if we come from the menu button
     else
     {
         require "view/login.php";
     }
+}
+
+function logout()
+{
+    session_destroy();
+    $_SESSION = array();
+    require "view/home.php";
 }
