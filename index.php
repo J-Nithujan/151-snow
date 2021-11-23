@@ -22,6 +22,7 @@ if (isset($_GET['action']))
             break;
 
         case 'login' :
+//            login($_POST);
             login();
             break;
 

@@ -13,12 +13,15 @@
 
 require "model/userMgt.php";
 
+//function login($usersArray)
 function login()
 {
-    if(isset($_POST['email']))
+    if(isset($usersArray['email']))
     {
+//        if(checkLogin($usersArray['email']))
         if(checkLogin())
         {
+//            $_SESSION['email'] = $usersArray['email'];
             $_SESSION['email'] = $_POST['email'];
             require "view/home.php";
         }

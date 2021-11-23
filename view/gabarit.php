@@ -176,7 +176,7 @@
                 <li class="item-menu-mobile">
                     <?php if(isset($_SESSION['email']))
                         { ?>
-                            <a href="index.php?action=">Logout</a>
+                            <a href="index.php?action=Logout">Logout</a>
                     <?php
                         }
                         else
