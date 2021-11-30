@@ -70,7 +70,7 @@
             ?>
             <div class="topbar-child2">
                 <span class="topbar-email">
-                    <? echo $_SESSION['email']; ?>
+                    <?php echo $_SESSION['email']; ?>
                 </span>
             </div>
             <?php
@@ -91,6 +91,10 @@
                     <ul class="main_menu">
                         <li>
                             <a href="index.php">Accueil</a>
+                        </li>
+
+                        <li>
+                            <a href="index.php">Articles</a>
                         </li>
 
                         <li>
@@ -171,6 +175,10 @@
 
                 <li class="item-menu-mobile">
                     <a href="index.php">Accueil</a>
+                </li>
+
+                <li>
+                    <a href="index.php">Articles</a>
                 </li>
 
                 <li class="item-menu-mobile">
