@@ -44,3 +44,35 @@ function logout()
     $_SESSION = array();
     require "view/home.php";
 }
+
+function register()
+{
+    $newUser = $_POST;
+    # Check if the user comes from another page
+    if (isset($newUser['userPswdConfirm']))
+    {
+        if($_POST['userPswd'] == $_POST['userPswdConfirm'])
+        {
+            if(checkNewUser())
+            {
+                addNewUser();
+                $_SESSION['email'] = $_POST['email'];
+                require "view/home.php";
+            }
+            else
+            {
+                $errorMsg = "Cette addresse email possède déjà un compte";
+                require "view/register.php";
+            }
+        }
+        else
+        {
+            $errorMsg = "Les mots de passe ne correspondent pas.";
+            require "view/register.php";
+        }
+    }
+    else
+    {
+        require "view/register.php";
+    }
+}

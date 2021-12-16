@@ -7,7 +7,7 @@ if(isset($articles)){
     <!-- Title Page -->
     <section class="bg-title-page p-t-50 p-b-40 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg);"> <?php // TODO: analyzed by garait.php so must spedifiy path from its location ?>
         <h2 class="l-text2 t-center">
-            Women
+            Nos Snows
         </h2>
     </section>
 
@@ -42,7 +42,7 @@ if(isset($articles)){
                                 </div>
 
                                 <div class="block2-txt p-t-20">
-                                    <a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+                                    <a href="index.php?articleId=<?= $articles[$i]['id']?>&action=displayArticlesDetail" class="block2-name dis-block s-text3 p-b-5">
                                     <?= $articles[$i]['brand']." ".$articles[$i]['model']; ?>
                                     </a>
 

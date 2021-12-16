@@ -12,6 +12,7 @@ session_start();
 require "controller/navigation.php";
 require "controller/users.php";
 require "controller/articles.php";
+require "controller/article_detail.php";
 
 if (isset($_GET['action']))
 {
@@ -33,6 +34,22 @@ if (isset($_GET['action']))
 
         case 'articles':
             displayArticles();
+            break;
+
+        case 'displayArticlesDetail':
+            displayArticleDetail();
+            break;
+
+        case 'displayArticlesAdmin':
+            displayArticlesAdmin();
+            break;
+
+        case 'addArticles':
+            addArticles();
+            break;
+
+        case 'register':
+            register();
             break;
 
         default :

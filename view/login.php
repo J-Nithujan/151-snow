@@ -12,7 +12,7 @@ $title = "SnowPoint . Login";
 ?>
 
 <!-- Title Page -->
-<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/heading-pages-06.jpg); ">
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style="background-image: url(view/content/images/home_slide_2.jpg); ">
     <h2 class="l-text2 t-center">
         Login
     </h2>
@@ -24,7 +24,8 @@ $title = "SnowPoint . Login";
         <div class="row">
 
             <div class="col-md-12 p-b-30">
-                <h2 style="background-color: red; "><?php if(isset($errorMsg))
+                <h2 style="color: red; ">
+                    <?php if(isset($errorMsg))
                     {
                         echo $errorMsg;
                     }?>

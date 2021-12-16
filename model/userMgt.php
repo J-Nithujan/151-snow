@@ -9,11 +9,35 @@
 
 require "dbConnector.php";
 
+function checkNewUser()
+{
+    $queryResult = null;
+    $selectQuery = "SELECT users.userEmailAddress FROM users";
+    $queryResult = executeQuerySelect($selectQuery);
+
+    if ($queryResult != null)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
+function addNewUser()
+{
+    $pswdHash = password_hash($_POST['userPswd'], PASSWORD_DEFAULT);
+    $insertQuery = "INSERT INTO users (users.userEmailAddress, users.userHashPsw) VALUES (:femail, :fpswd)";
+    $params = array(':femail' => $_POST['email'], ':fpswd' => $pswdHash);
+    executeQueryInsert($insertQuery, $params);
+}
+
 //function checkLogin($credentials)
 function checkLogin()
 {
 
-    $query = "SELECT users.userEmailAddress, users.userHashPsw FROM users WHERE userEmailAddress = :femail";
+    $query = "SELECT users.userEmailAddress, users.userHashPsw, users.isAdmin FROM users WHERE userEmailAddress = :femail";
     $params = array(':femail' => $_POST['email']);
     $queryResult = executeQuerySelect($query, $params);
 
@@ -21,6 +45,7 @@ function checkLogin()
 
     if ($comparison)
     {
+        $_SESSION['isAdmin'] = $queryResult[0]['isAdmin'];
         return true;
     }
     else

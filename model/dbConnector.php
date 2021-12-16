@@ -72,9 +72,17 @@ function executeQuerySelect($query, $params=null)
  * @param $query
  * @return null
  */
-function executeQueryInsert($query)
+function executeQueryInsert($query, $params)
 {
+    $dbConnexion = openDBConnexion();
 
+    if($dbConnexion != null)
+    {
+        $statement = $dbConnexion->prepare($query);
+        $statement->execute($params);
+    }
+
+    $dbConnexion = null;
 }
 
 

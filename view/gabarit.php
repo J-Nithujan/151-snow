@@ -94,24 +94,33 @@
                         </li>
 
                         <li>
-                            <a href="index.php?action=articles">Articles</a>
+                            <a href="index.php?action=articles">Nos snows</a>
+                        </li>
+
+                        <?php if (isset($_SESSION['isAdmin'])){ ?>
+                        <li>
+                            <a href="index.php?action=displayArticlesAdmin">Gestion</a>
+                        </li>
+                        <?php } ?>
+
+                        <?php if(isset($_SESSION['email']))
+                        { ?>
+                        <li>
+                            <a href="index.php?action=logout">Logout</a>
+                        </li>
+                        <?php
+                        }
+                        else
+                        {
+                        ?>
+                        <li>
+                            <a href="index.php?action=login">Login</a>
                         </li>
 
                         <li>
-                            <?php
-                            if(isset($_SESSION['email']))
-                            {
-                                ?>
-                                <a href="index.php?action=logout">Logout</a>
-                            <?php
-                            }
-                            else
-                            {
-                            ?>
-                                <a href="index.php?action=login">Login</a>
-                            <?php
-                                }
-                            ?>
+                            <a href="index.php?action=register">S'enregistrer</a>
+                        </li>
+                        <?php } ?>
                         </li>
 
                     </ul>
