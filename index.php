@@ -24,8 +24,7 @@ if (isset($_GET['action']))
             break;
 
         case 'login' :
-//            login($_POST);
-            login();
+            login($_POST);
             break;
 
         case 'logout' :
@@ -37,15 +36,27 @@ if (isset($_GET['action']))
             break;
 
         case 'displayArticlesDetail':
-            displayArticleDetail();
+            displayArticleDetail($_GET['articleId']);
             break;
 
         case 'displayArticlesAdmin':
             displayArticlesAdmin();
             break;
 
-        case 'addArticles':
-            addArticles();
+        case 'addArticle':
+            addArticle($_POST);
+            break;
+
+        case 'editArticle':
+            modifyArticle($_GET['articleId']);
+            break;
+
+        case 'saveChanges':
+            saveChanges($_POST, $_GET['articleId']);
+            break;
+
+        case 'removeArticle':
+            removeArticle($_GET['articleId']);
             break;
 
         case 'register':

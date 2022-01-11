@@ -27,7 +27,7 @@ if(isset($articles))
                                 <th scope="col">Prix à l'unité</th>
                                 <th scope="col">Quantité</th>
                                 <th scope="col">
-                                    <a href="index.php?action=addArticles">
+                                    <a href="index.php?action=addArticle">
                                         <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
                                             Ajouter
                                         </button>
@@ -36,7 +36,8 @@ if(isset($articles))
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach ($articles as $article) { ?>
+                            <?php foreach ($articles as $article) {
+                                if ($article['active']) { ?>
                                 <tr>
                                     <td class="align-middle"><?=$article['code'] ?></td>
                                     <td class="align-middle"><div class="cart-img-product b-rad-4 o-f-hidden"><img src="<?=$article['photo'] ?>" class="img-fluid" alt="IMG-PRODUCT"></div></td>
@@ -46,16 +47,21 @@ if(isset($articles))
                                     <td class="align-middle"><?=$article['qtyAvailable'] ?></td>
                                     <td class="align-middle">
 <!--                                        <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">-->
-                                        <button class="flex-c-m size4 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
-                                            <img src="view/content/images/icons/bin2.png">
-                                        </button>
+                                        <a href="index.php?action=removeArticle&articleId=<?=$article['id'] ?>">
+                                            <button class="flex-c-m size4 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                                                <img src="view/content/images/icons/bin2.png">
+                                            </button>
+                                        </a>
                                         <br>
-                                        <button class="flex-c-m size4 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-                                            <img src="view/content/images/icons/pencil2.png">
-                                        </button>
+                                        <a href="index.php?action=editArticle&articleId=<?=$article['id'] ?>">
+                                            <button class="flex-c-m size4 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                                <img src="view/content/images/icons/pencil2.png">
+                                            </button>
+                                        </a>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php }
+                            } ?>
                             </tbody>
                         </table>
                     </div>

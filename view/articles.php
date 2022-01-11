@@ -17,14 +17,16 @@ if(isset($articles)){
                 <div class="col-sm-6 col-md-8 col-lg-12 p-b-50"> <!-- before: col-lg-9  -->
                     <div class="row">
                     <?php
-                        for ($i = 0; $i < count($articles); $i++)
+                        foreach ($articles as $article)
                         {
+                            if ($article['active']) {
                     ?>
                         <div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
                             <!-- Block2 -->
                             <div class="block2">
                                 <div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-                                    <img src=<?=$articles[$i]['photo'];?> alt="IMG-PRODUCT">
+                                    <?php # if(is_file()) ?>
+                                    <img src=<?=$article['photo'];?> alt="IMG-PRODUCT">
 
                                     <div class="block2-overlay trans-0-4">
                                         <a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
@@ -42,21 +44,22 @@ if(isset($articles)){
                                 </div>
 
                                 <div class="block2-txt p-t-20">
-                                    <a href="index.php?articleId=<?= $articles[$i]['id']?>&action=displayArticlesDetail" class="block2-name dis-block s-text3 p-b-5">
-                                    <?= $articles[$i]['brand']." ".$articles[$i]['model']; ?>
+                                    <a href="index.php?articleId=<?= $article['id']?>&action=displayArticlesDetail" class="block2-name dis-block s-text3 p-b-5">
+                                    <?= $article['brand']." ".$article['model']; ?>
                                     </a>
 
                                     <span class="block2-price m-text6 p-r-5">
-                                        <strong>Disponiblité</strong>: <?= $articles[$i]['qtyAvailable']; ?>
+                                        <strong>Disponiblité</strong>: <?= $article['qtyAvailable']; ?>
                                     </span>
                                     <br>
                                     <span class="block2-price m-text6 p-r-5">
-                                    CHF <?= $articles[$i]['price']; ?>
+                                    CHF <?= $article['price']; ?>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     <?php
+                            }
                     }
                     ?>
                 </div>

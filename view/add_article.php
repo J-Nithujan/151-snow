@@ -19,13 +19,13 @@ $title = "SnowPoint . Ajout d'article";
                 <div class="col-md-12 p-b-30">
 
                     <!--                <form class="leave-comment" method="post" action="../index.php?login">-->
-                    <form class="leave-comment" method="post" action="index.php?action=addArticles">
+                    <form class="leave-comment" method="post" enctype="multipart/form-data"  action="index.php?action=addArticle">
                         <h4 class="m-text26 p-b-36 p-t-15">
                             Nouvel article
                         </h4>
 
                         <div class="bo4 of-hidden size15 m-b-20">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="code" placeholder="Code de l'article" required>
+                            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="code" maxlength="4" placeholder="Code de l'article" required>
                         </div>
 
                         <div class="bo4 of-hidden size15 m-b-20">
@@ -48,8 +48,10 @@ $title = "SnowPoint . Ajout d'article";
                             <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="qtyAvailable" placeholder="Quantité" required>
                         </div>
 
-                        <div class="bo4 of-hidden size15 m-b-20">
-                            <input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="photo" placeholder="Ajouter photo?" required>
+                        <div class="bo4 of-hidden size15 m-b-20 p-t-10">
+                            <label class="s-text3 p-l-22 p-r-22" for="photo">Image :</label>
+
+                            <input class=" s-text7 p-l-22 p-r-22" type="file" accept="image/*,.jpeg, .jpg, .png" name="photo" required>
                         </div>
 
                         <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden size15 m-b-20">

@@ -14,9 +14,9 @@
 require "model/userMgt.php";
 
 //function login($usersArray)
-function login()
+function login($post)
 {
-    $usersArray = $_POST;
+    $usersArray = $post;
     if(isset($usersArray['email']))
     {
 //        if(checkLogin($usersArray['email']))
