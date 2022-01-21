@@ -54,15 +54,17 @@ $title = "SnowPoint . Ajout d'article";
                             <input class=" s-text7 p-l-22 p-r-22" type="file" accept="image/*,.jpeg, .jpg, .png" name="photo" required>
                         </div>
 
-                        <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden size15 m-b-20">
+                        <div class="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden size15 p-t-10 p-l-15 m-b-15">
                             <select class="selection-2" name="audience" required>
                                 <option value="Pour qui?" selected disabled>Pour qui?</option>
                                 <option value="Homme">Homme</option>
                                 <option value="Femme">Femme</option>
+                                <option value="Enfant">Enfant</option>
                             </select>
                         </div>
 
-                        <input type="submit" value="Ajouter l'article" class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4"><br>
+                        <input type="submit" value="Ajouter l'article" class="flex-c-s size11 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                        <input type="submit" value="Annuler" onclick="history.back()" class="flex-c-s size11 bg4 bo-rad-23 hov1 m-text3 trans-0-4 m-t-10">
                     </form>
                 </div>
             </div>

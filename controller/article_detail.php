@@ -47,5 +47,6 @@ function saveChanges($articleData, $articleId)
     if (isset($articleData) && isset($articleId))
     {
         updateArticles($articleData, $articleId);
+        displayArticlesAdmin();
     }
 }

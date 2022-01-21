@@ -15,7 +15,7 @@ if(isset($articleInfo)){
                 <div class="slick3">
                     <div class="item-slick3" data-thumb="images/thumb-item-01.jpg">
                         <div class="wrap-pic-w">
-                            <img src=<?=$articleInfo[0]['photo']?> alt="IMG-PRODUCT">
+                            <img src=<?=$articleInfo['photo']?> alt="IMG-PRODUCT">
                         </div>
                     </div>
                 </div>
@@ -24,15 +24,15 @@ if(isset($articleInfo)){
 
         <div class="w-size14 p-t-30 respon5">
             <h4 class="product-detail-name m-text16 p-b-13">
-                <?= $articleInfo[0]['brand'].' '.$articleInfo[0]['model']?>
+                <?= $articleInfo['brand'].' '.$articleInfo['model']?>
             </h4>
 
             <span class="m-text17">
-                Prix <?= $articleInfo[0]['price'] ?> CHF
+                Prix <?= $articleInfo['price'] ?> CHF
             </span>
 
             <p class="s-text8 p-t-10">
-                <?= $articleInfo[0]['description'] ?>
+                <?= $articleInfo['description'] ?>
             </p>
 
             <!--  -->
@@ -43,7 +43,7 @@ if(isset($articleInfo)){
                     </div>
 
                     <div class="rs2-select2 rs3-select2 of-hidden w-size16">
-                        <?= $articleInfo[0]['code'] ?>
+                        <?= $articleInfo['code'] ?>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ if(isset($articleInfo)){
                     </div>
 
                     <div class="rs2-select2 rs3-select2 of-hidden w-size16">
-                        <?= $articleInfo[0]['snowLength'] ?>
+                        <?= $articleInfo['snowLength'] ?>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@ if(isset($articleInfo)){
                     </div>
 
                     <div class="rs2-select2 rs3-select2 of-hidden w-size16">
-                        <?= $articleInfo[0]['level'] ?>
+                        <?= $articleInfo['level'] ?>
                     </div>
                 </div>
 
@@ -101,7 +101,7 @@ if(isset($articleInfo)){
 
                 <div class="dropdown-content dis-none p-t-15 p-b-23">
                     <p class="s-text8">
-                        <?= $articleInfo[0]['descriptionFull'] ?>
+                        <?= $articleInfo['descriptionFull'] ?>
                     </p>
                 </div>
             </div>

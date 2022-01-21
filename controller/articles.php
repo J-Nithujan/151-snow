@@ -13,3 +13,8 @@ function displayArticlesAdmin()
     $articles = getArticles();
     require "view/articles_admin.php";
 }
+
+function displayCart()
+{
+    require "view/cart.php";
+}

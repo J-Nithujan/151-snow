@@ -36,9 +36,11 @@ if(isset($articles)){
 
                                         <div class="block2-btn-addcart w-size1 trans-0-4">
                                             <!-- Button -->
-                                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+                                            <a href="index.php?action=cart">
+                                            <button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4" >
                                             Add to Cart
                                             </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

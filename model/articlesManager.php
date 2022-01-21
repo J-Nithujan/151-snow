@@ -15,11 +15,11 @@ function getArticles()
 function findArticleWithId($articleId)
 {
     $article = null;
-    $query = "SELECT snows.code, snows.brand, snows.model, snows.snowLength, snows.audience, snows.qtyAvailable, snows.description, snows.price, snows.descriptionFull, snows.level, snows.photo FROM snows WHERE snows.id = :selectedArticle";
+    $query = "SELECT snows.id, snows.code, snows.brand, snows.model, snows.snowLength, snows.audience, snows.qtyAvailable, snows.description, snows.price, snows.descriptionFull, snows.level, snows.photo FROM snows WHERE snows.id = :selectedArticle";
     $params = array(':selectedArticle' => $articleId);
     $article = executeQuerySelect($query, $params);
 
-    return $article;
+    return $article[0];
 }
 
 function newArticle($articleData)

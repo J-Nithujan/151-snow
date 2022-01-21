@@ -39,6 +39,10 @@ if (isset($_GET['action']))
             displayArticleDetail($_GET['articleId']);
             break;
 
+        case 'cart':
+            displayCart();
+            break;
+
         case 'displayArticlesAdmin':
             displayArticlesAdmin();
             break;
